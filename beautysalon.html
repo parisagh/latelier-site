@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'Atelier dello Sguardo - Centro di Estetica Avanzata a Genova. Trucco Permanente, Extension Ciglia e Trattamenti Viso.">
+    <meta name="keywords" content="Estetica Genova, Trucco Permanente, Extension Ciglia, Microneedling, L'Atelier dello Sguardo">
+    <title>L'Atelier dello Sguardo | Beauty & Tattoo Genova</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* تنظیمات کلی و رنگ‌بندی */
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; color: var(--black); line-height: 1.6; background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--black); }
+        
+        /* هدر */
+        header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--black); font-size: 0.9em; }
+        
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .btn-call { background: var(--gold); color: var(--white) !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
+        .btn-call:hover { background: #b59021; transform: translateY(-2px); }
+
+        /* هیرو (بنر اصلی) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center; height: 75vh; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            text-align: center; color: var(--white); padding: 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; }
+
+        /* بخش قیمت‌ها */
+        .pricing { padding: 80px 0; background: var(--gray); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-title p { color: #666; font-style: italic; }
+
+        .price-category { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .price-category h3 { color: var(--gold); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; font-size: 1.5rem; }
+        
+        .price-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
+        .price-item:last-child { border-bottom: none; }
+        .service-name { font-weight: 600; font-size: 1.05rem; }
+        
+        /* استایل قیمت و لودینگ */
+        .price-value { font-weight: 800; color: var(--black); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        .loading { color: #ccc; font-size: 0.9rem; font-weight: normal; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+        /* نظرات */
+        .reviews { padding: 80px 0; text-align: center; background: var(--white); }
+        .google-card { 
+            background: #fff; border: 1px solid #eee; padding: 40px; max-width: 600px; margin: 0 auto; 
+            border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+        }
+        .stars { color: #fbbc04; font-size: 1.5rem; margin-bottom: 15px; }
+        
+        /* فوتر */
+        footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
+        footer h3 { color: var(--white); margin-bottom: 15px; }
+        footer a { color: var(--gold); text-decoration: none; }
+        .dreamloop { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; letter-spacing: 1px; }
+
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; }
+            .nav-links { margin-top: 15px; margin-bottom: 15px; }
+            .nav-links a { margin: 0 10px; }
+            .hero h1 { font-size: 2.5rem; }
+            .price-item { flex-direction: column; align-items: flex-start; }
+            .price-value { align-self: flex-end; margin-top: 5px; color: var(--gold); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">L'Atelier <span>dello Sguardo</span></a>
+            <div class="nav-links">
+                <a href="#services">Servizi</a>
+                <a href="#about">Info</a>
+                <a href="#reviews">Recensioni</a>
+            </div>
+            <a href="tel:+393478364050" class="btn-call"><i class="fas fa-phone-alt"></i> Prenota</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Beauty & Tattoo</h1>
+        <p>Centro di Estetica Avanzata a Genova | Veronica Antonelli</p>
+        <a href="#services" class="btn-call" style="background: transparent; border: 2px solid #d4af37;">Scopri i Prezzi</a>
+    </section>
+
+    <section id="services" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Servizi</h2>
+                <p>Prezzi aggiornati in tempo reale</p>
+            </div>
+
+            <div class="price-category">
+                <h3><i class="fas fa-spa"></i> Trattamenti Viso</h3>
+                
+                <div class="price-item">
+                    <span class="service-name">Pulizia del Viso ultrasuoni</span>
+                    <span id="vis_pulizia" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Trattamento Viso Personalizzato</span>
+                    <span id="vis_pers" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Massaggio Viso Kobido</span>
+                    <span id="vis_kobido" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Microneedling Viso Basic</span>
+                    <span id="vis_micro_basic" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Microneedling Specifico 3 zone</span>
+                    <span id="vis_micro_3zone" class="price-value loading">Caricamento...</span>
+                </div>
+            </div>
+
+            <div class="price-category">
+                <h3><i class="fas fa-eye"></i> Ciglia & Sopracciglia</h3>
+                
+                <div class="price-item">
+                    <span class="service-name">Extension Ciglia</span>
+                    <span id="ciglia_ext" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Ritocco Extension Ciglia</span>
+                    <span id="ciglia_ritocco" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Laminazione Ciglia</span>
+                    <span id="ciglia_lam" class="price-value loading">Caricamento...</span>
+                </div>
+            </div>
+
+            <div class="price-category">
+                <h3><i class="fas fa-feather-alt"></i> Trucco Permanente (PMU)</h3>
+                
+                <div class="price-item">
+                    <span class="service-name">Sopracciglia / Labbra</span>
+                    <span id="pmu_sopra" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Infracigliare / Eyeliner</span>
+                    <span id="pmu_eye" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Ritocco annuale</span>
+                    <span id="pmu_ritocco" class="price-value loading">Caricamento...</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" style="background:#fff; padding:60px 0; text-align:center;">
+        <div class="container">
+            <h2 style="margin-bottom:20px;">Dove Siamo</h2>
+            <p style="margin-bottom:30px;"><i class="fas fa-map-marker-alt" style="color:var(--gold)"></i> Via G.B.Monti, 56r | Genova (Sampierdarena)</p>
+            <div style="font-size: 2rem;">
+                 <a href="https://instagram.com/veronica_antonelli.pmu_lashes" target="_blank" style="color: #E1306C; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
+                 <a href="https://wa.me/393478364050" target="_blank" style="color: #25D366; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="google-card">
+                <h2>Cosa dicono i nostri clienti</h2>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>Valutato <strong>Eccellente</strong> su Google Maps</p>
+                <br>
+                <a href="https://www.google.com/maps/search/?api=1&query=L'Atelier+dello+Sguardo+Genova" target="_blank" class="btn-call" style="background: #4285F4; box-shadow:none;">Leggi le recensioni su Google</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>L'Atelier dello Sguardo</h3>
+            <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
+            <p>Via G.B.Monti, 56r, Genova</p>
+            
+            <div class="dreamloop">
+                <p>Designed with <i class="fas fa-heart" style="color:red"></i> by <strong>dreamloop</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // لینک اختصاصی شما که ارسال کردید
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRfhEl0vWs8L_p98A2A2_315q4mMvHnhojg8SWW8cehfL4pUUcHNjrSU5mdg4GROSEXaa7ZpDfB7ESk/pub?gid=0&single=true&output=csv';
+
+        // تابع خواندن اطلاعات
+        fetch(sheetUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n'); // جدا کردن خطوط
+                
+                rows.forEach(row => {
+                    // تقسیم هر خط به ستون‌ها بر اساس کاما
+                    const cols = row.split(','); 
+                    
+                    if(cols.length >= 2) {
+                        const id = cols[0].trim(); // شناسه (مثل vis_pulizia)
+                        
+                        // فرمول برای اینکه اگر قیمت کاما داشت (مثل € 50,00) خراب نشود
+                        // کتیشن‌ها (") را حذف می‌کند و بقیه بخش‌ها را به هم می‌چسباند
+                        const price = cols.slice(1).join(',').replace(/['"]+/g, '').trim(); 
+                        
+                        // پیدا کردن جایگاه قیمت در HTML و جایگذاری قیمت جدید
+                        const element = document.getElementById(id);
+                        if (element) {
+                            element.textContent = price; // تغییر متن
+                            element.classList.remove('loading'); // حذف انیمیشن لودینگ
+                            element.style.color = '#1a1a1a'; // تغییر رنگ به مشکی
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+
+</body>
+</html>
