@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+   
     <title>L'Atelier dello Sguardo | Centro Estetico Genova & Trucco Permanente</title>
     <meta name="description" content="Centro di estetica avanzata a Genova (Sampierdarena). Specializzati in Extension Ciglia, Trucco Permanente (PMU), Microneedling e Tattoo. Prenota con Veronica Antonelli.">
     <meta name="keywords" content="Centro Estetico Genova, Extension Ciglia, Trucco Permanente, PMU, Tattoo, Sampierdarena, Veronica Antonelli">
-    
+   
     <link rel="icon" href="https://parisagh.github.io/latelier-site/icon.ico" type="image/x-icon">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -57,15 +57,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Lato', sans-serif; color: var(--black); line-height: 1.6; background-color: var(--white); }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--black); }
-        
+       
         /* هدر */
         header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
-        
+       
         /* لوگوی تصویری */
         .logo-img { height: 60px; width: auto; display: block; }
-        
+       
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
         .btn-call { background: var(--gold); color: var(--white) !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
@@ -97,11 +97,11 @@
 
         .price-category { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
         .price-category h3 { color: var(--gold); border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 25px; font-size: 1.5rem; }
-        
+       
         .price-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
         .price-item:last-child { border-bottom: none; }
         .service-name { font-weight: 600; font-size: 1.05rem; }
-        
+       
         /* استایل قیمت و لودینگ */
         .price-value { font-weight: 800; color: var(--black); font-family: 'Playfair Display', serif; font-size: 1.2rem; }
         .loading { color: #ccc; font-size: 0.9rem; font-weight: normal; animation: pulse 1.5s infinite; }
@@ -117,7 +117,7 @@
             border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
         .stars { color: #fbbc04; font-size: 1.5rem; margin-bottom: 15px; }
-        
+       
         /* فوتر */
         footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
         footer h3 { color: var(--white); margin-bottom: 15px; }
@@ -181,24 +181,32 @@
         <div class="container">
             <div class="section-title">
                 <h2>I Nostri Servizi</h2>
-                <p class="seo-text">Offriamo servizi di Extension Ciglia, Trucco Permanente (Sopracciglia, Labbra, Eyeliner) e trattamenti viso come Microneedling e Pulizia Viso a Genova Sampierdarena.</p>
+                <p class="seo-text">Offriamo servizi di Extension Ciglia, Trucco Permanente, Tattoo Fineline, Laminazione e trattamenti viso avanzati a Genova Sampierdarena.</p>
                 <p>Prezzi aggiornati in tempo reale</p>
             </div>
 
             <div class="price-category">
-                <h3><i class="fas fa-spa"></i> Trattamenti Viso</h3>
-                
+                <h3><i class="fas fa-spa"></i> Trattamenti Viso & Skin Care</h3>
+               
                 <div class="price-item">
-                    <span class="service-name">Pulizia del Viso ultrasuoni</span>
+                    <span class="service-name">Pulizia Viso Ultrasuoni + Trattamento</span>
                     <span id="vis_pulizia" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Trattamento Viso Personalizzato</span>
+                    <span class="service-name">Trattamento Viso Personalizzato (Antiage/Detox)</span>
                     <span id="vis_pers" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Massaggio Viso Kobido</span>
+                    <span class="service-name">Massaggio Viso Kobido (Antiage)</span>
                     <span id="vis_kobido" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Massaggio Viso e Cervicale</span>
+                    <span id="vis_cervicale" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Massaggio Viso Guasha + Cuoio Capelluto</span>
+                    <span id="vis_guasha" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Microneedling Viso Basic</span>
@@ -208,39 +216,86 @@
                     <span class="service-name">Microneedling Specifico 3 zone</span>
                     <span id="vis_micro_3zone" class="price-value loading">Caricamento...</span>
                 </div>
+                <div class="price-item">
+                    <span class="service-name">Microneedling Labbra</span>
+                    <span id="vis_micro_labbra" class="price-value loading">Caricamento...</span>
+                </div>
             </div>
 
             <div class="price-category">
                 <h3><i class="fas fa-eye"></i> Ciglia & Sopracciglia</h3>
-                
+               
+                <h4 style="margin: 15px 0 10px; color: #666; font-size: 1rem; text-transform: uppercase;">Mondo Ciglia</h4>
                 <div class="price-item">
                     <span class="service-name">Extension Ciglia</span>
                     <span id="ciglia_ext" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Ritocco Extension Ciglia</span>
+                    <span class="service-name">Ciglia Colorate / Effetti Particolari</span>
+                    <span id="ciglia_color" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Ritocco Extension (entro 3 sett.)</span>
                     <span id="ciglia_ritocco" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Laminazione Ciglia</span>
+                    <span class="service-name">Rimozione Extension</span>
+                    <span id="ciglia_rimozione" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Laminazione Ciglia (con/senza tinta)</span>
                     <span id="ciglia_lam" class="price-value loading">Caricamento...</span>
+                </div>
+
+                <h4 style="margin: 25px 0 10px; color: #666; font-size: 1rem; text-transform: uppercase;">Mondo Sopracciglia</h4>
+                <div class="price-item">
+                    <span class="service-name">Laminazione Sopracciglia (con/senza tinta)</span>
+                    <span id="sopra_lam" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Architettura Sopracciglia e Tinta</span>
+                    <span id="sopra_arch" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Architettura + Henné Sopracciglia</span>
+                    <span id="sopra_henne" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Epilazione Sopracciglia</span>
+                    <span id="epil_sopra" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Epilazione Labbro Superiore</span>
+                    <span id="epil_labbro" class="price-value loading">Caricamento...</span>
                 </div>
             </div>
 
             <div class="price-category">
-                <h3><i class="fas fa-feather-alt"></i> Trucco Permanente (PMU)</h3>
-                
+                <h3><i class="fas fa-feather-alt"></i> PMU & Tattoo</h3>
+               
                 <div class="price-item">
-                    <span class="service-name">Sopracciglia / Labbra</span>
+                    <span class="service-name">PMU Sopracciglia / Labbra</span>
                     <span id="pmu_sopra" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Infracigliare / Eyeliner</span>
+                    <span class="service-name">PMU Infracigliare / Eyeliner</span>
                     <span id="pmu_eye" class="price-value loading">Caricamento...</span>
                 </div>
                 <div class="price-item">
-                    <span class="service-name">Ritocco annuale</span>
+                    <span class="service-name">Neutralizzazione PMU Sopracciglia</span>
+                    <span id="pmu_neutral" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Ritocco annuale PMU</span>
                     <span id="pmu_ritocco" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Fineline Tattoo (previo consulto)</span>
+                    <span id="tattoo_fineline" class="price-value loading">Caricamento...</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Neo Estetico</span>
+                    <span id="tattoo_neo" class="price-value loading">Caricamento...</span>
                 </div>
             </div>
 
@@ -253,8 +308,8 @@
                 <h2>I Nostri Lavori</h2>
                 <p>Alcuni esempi reali dei nostri trattamenti</p>
             </div>
-    
-            <iframe 
+   
+            <iframe
                 src="https://drive.google.com/embeddedfolderview?id=1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp#grid"
                 style="width:100%; height:600px; border:0; border-radius:15px; background:#fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
             </iframe>
@@ -290,11 +345,11 @@
     <footer>
         <div class="container">
             <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Logo Footer" class="footer-logo">
-            
+           
             <h3>L'Atelier dello Sguardo</h3>
             <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
             <p>Via G.B.Monti, 56r, Genova</p>
-            
+           
             <div class="dreamloop">
                 <p>Designed with <i class="fas fa-heart" style="color:red"></i> by <a href="https://parisagh.github.io/dreanloop/" target="_blank"><strong>dreamloop</strong></a></p>
             </div>
@@ -309,14 +364,15 @@
             .then(response => response.text())
             .then(csvText => {
                 const rows = csvText.split('\n');
-                
+               
                 rows.forEach(row => {
                     const cols = row.split(',');
-                    
+                   
                     if(cols.length >= 2) {
                         const id = cols[0].trim();
+                        // اصلاح برای هندل کردن کاما در قیمت‌ها
                         const price = cols.slice(1).join(',').replace(/['"]+/g, '').trim();
-                        
+                       
                         const element = document.getElementById(id);
                         if (element) {
                             element.textContent = price;
@@ -333,5 +389,3 @@
 
 </body>
 </html>
-
-
