@@ -32,8 +32,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 44.4161, 
-        "longitude": 8.8953 
+        "latitude": 44.4161,
+        "longitude": 8.8953
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -108,7 +108,7 @@
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 
         /* توضیحات سئو برای سرویس‌ها (مخفی برای کاربر، قابل دیدن برای گوگل) */
-        .seo-text { display: none; } 
+        .seo-text { display: none; }
 
         /* نظرات */
         .reviews { padding: 80px 0; text-align: center; background: var(--white); }
@@ -148,7 +148,7 @@
             <div class="nav-links">
                 <a href="#about-me">Chi Sono</a>
                 <a href="#services">Servizi</a>
-                <a href="#about">Info</a>
+                <a href="#portfolio">Lavori</a> <a href="#about">Info</a>
                 <a href="#reviews">Recensioni</a>
             </div>
             <a href="tel:+393478364050" class="btn-call"><i class="fas fa-phone-alt"></i> Prenota</a>
@@ -172,7 +172,7 @@
                 <br>
                 <p>La mia passione è creare armonia e benessere per ogni cliente.</p>
                 <br>
-                <a href="#services" style="color: var(--gold); font-weight: bold; text-decoration: none;">Scopri i miei trattamenti &rarr;</a>
+                <a href="#services" style="color: var(--gold); font-weight: bold; text-decoration: none;">Scopri i miei trattamenti →</a>
             </div>
         </div>
     </section>
@@ -247,6 +247,20 @@
         </div>
     </section>
 
+    <section id="portfolio" style="padding:80px 0; background:#fff; border-top: 1px solid #eee;">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Lavori</h2>
+                <p>Alcuni esempi reali dei nostri trattamenti</p>
+            </div>
+    
+            <iframe 
+                src="https://drive.google.com/embeddedfolderview?id=1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp#grid"
+                style="width:100%; height:600px; border:0; border-radius:15px; background:#fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            </iframe>
+        </div>
+    </section>
+
     <section id="about" style="background:#fff; padding:60px 0; text-align:center;">
         <div class="container">
             <h2 style="margin-bottom:20px;">Dove Siamo</h2>
@@ -294,20 +308,20 @@
         fetch(sheetUrl)
             .then(response => response.text())
             .then(csvText => {
-                const rows = csvText.split('\n'); 
+                const rows = csvText.split('\n');
                 
                 rows.forEach(row => {
                     const cols = row.split(',');
                     
                     if(cols.length >= 2) {
-                        const id = cols[0].trim(); 
+                        const id = cols[0].trim();
                         const price = cols.slice(1).join(',').replace(/['"]+/g, '').trim();
                         
                         const element = document.getElementById(id);
                         if (element) {
-                            element.textContent = price; 
-                            element.classList.remove('loading'); 
-                            element.style.color = '#1a1a1a'; 
+                            element.textContent = price;
+                            element.classList.remove('loading');
+                            element.style.color = '#1a1a1a';
                         }
                     }
                 });
@@ -319,6 +333,5 @@
 
 </body>
 </html>
-
 
 
