@@ -3,12 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="L'Atelier dello Sguardo - Centro di Estetica Avanzata a Genova. Trucco Permanente, Extension Ciglia e Trattamenti Viso.">
-    <meta name="keywords" content="Estetica Genova, Trucco Permanente, Extension Ciglia, Microneedling, L'Atelier dello Sguardo">
-    <title>L'Atelier dello Sguardo | Beauty & Tattoo Genova</title>
     
+    <title>L'Atelier dello Sguardo | Centro Estetico Genova & Trucco Permanente</title>
+    <meta name="description" content="Centro di estetica avanzata a Genova (Sampierdarena). Specializzati in Extension Ciglia, Trucco Permanente (PMU), Microneedling e Tattoo. Prenota con Veronica Antonelli.">
+    <meta name="keywords" content="Centro Estetico Genova, Extension Ciglia, Trucco Permanente, PMU, Tattoo, Sampierdarena, Veronica Antonelli">
+    
+    <link rel="icon" href="https://s34.picofile.com/file/8488966642/icon.ico" type="image/x-icon">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "L'Atelier dello Sguardo",
+      "image": "https://s34.picofile.com/file/8488966500/1767509890010.png",
+      "@id": "https://parisagh.github.io/latelier-site",
+      "url": "https://parisagh.github.io/latelier-site",
+      "telephone": "+393478364050",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via G.B.Monti, 56r",
+        "addressLocality": "Genova",
+        "addressRegion": "Liguria",
+        "postalCode": "16151",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.4161, 
+        "longitude": 8.8953 
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
     <style>
         /* تنظیمات کلی و رنگ‌بندی */
@@ -26,9 +61,10 @@
         /* هدر */
         header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-        .logo { font-size: 1.4rem; font-weight: bold; color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
-        .logo span { color: var(--black); font-size: 0.9em; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+        
+        /* لوگوی تصویری */
+        .logo-img { height: 60px; width: auto; display: block; }
         
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
@@ -38,12 +74,20 @@
         /* هیرو (بنر اصلی) */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover; background-position: center; height: 75vh; 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            background-size: cover; background-position: center; height: 75vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: var(--white); padding: 20px;
         }
         .hero h1 { font-size: 3.5rem; margin-bottom: 15px; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; }
+
+        /* بیوگرافی (بخش جدید) */
+        .bio-section { padding: 80px 0; background: var(--white); }
+        .bio-content { display: flex; align-items: center; gap: 40px; }
+        .bio-image { flex: 1; }
+        .bio-image img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .bio-text { flex: 1; }
+        .bio-text h2 { margin-bottom: 20px; color: var(--gold); }
 
         /* بخش قیمت‌ها */
         .pricing { padding: 80px 0; background: var(--gray); }
@@ -63,11 +107,14 @@
         .loading { color: #ccc; font-size: 0.9rem; font-weight: normal; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 
+        /* توضیحات سئو برای سرویس‌ها (مخفی برای کاربر، قابل دیدن برای گوگل) */
+        .seo-text { display: none; } 
+
         /* نظرات */
         .reviews { padding: 80px 0; text-align: center; background: var(--white); }
-        .google-card { 
-            background: #fff; border: 1px solid #eee; padding: 40px; max-width: 600px; margin: 0 auto; 
-            border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
+        .google-card {
+            background: #fff; border: 1px solid #eee; padding: 40px; max-width: 600px; margin: 0 auto;
+            border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
         .stars { color: #fbbc04; font-size: 1.5rem; margin-bottom: 15px; }
         
@@ -75,6 +122,7 @@
         footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
         footer h3 { color: var(--white); margin-bottom: 15px; }
         footer a { color: var(--gold); text-decoration: none; }
+        .footer-logo { width: 150px; margin-bottom: 20px; opacity: 0.8; }
         .dreamloop { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; letter-spacing: 1px; }
 
         /* ریسپانسیو */
@@ -85,6 +133,8 @@
             .hero h1 { font-size: 2.5rem; }
             .price-item { flex-direction: column; align-items: flex-start; }
             .price-value { align-self: flex-end; margin-top: 5px; color: var(--gold); }
+            .bio-content { flex-direction: column; text-align: center; }
+            .bio-image { margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -92,8 +142,11 @@
 
     <header>
         <div class="container navbar">
-            <a href="#" class="logo">L'Atelier <span>dello Sguardo</span></a>
+            <a href="#">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="L'Atelier dello Sguardo Logo" class="logo-img">
+            </a>
             <div class="nav-links">
+                <a href="#about-me">Chi Sono</a>
                 <a href="#services">Servizi</a>
                 <a href="#about">Info</a>
                 <a href="#reviews">Recensioni</a>
@@ -103,15 +156,32 @@
     </header>
 
     <section class="hero">
-        <h1>Beauty & Tattoo</h1>
-        <p>Centro di Estetica Avanzata a Genova | Veronica Antonelli</p>
+        <h1>Centro Estetico Genova</h1>
+        <p>L'Atelier dello Sguardo | Beauty & Tattoo | Veronica Antonelli</p>
         <a href="#services" class="btn-call" style="background: transparent; border: 2px solid #d4af37;">Scopri i Prezzi</a>
+    </section>
+
+    <section id="about-me" class="bio-section">
+        <div class="container bio-content">
+            <div class="bio-image">
+                <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Veronica Antonelli">
+            </div>
+            <div class="bio-text">
+                <h2>Veronica Antonelli</h2>
+                <p>Ciao! Sono Veronica, specialista in bellezza dello sguardo e dermopigmentazione. Nel mio Atelier a Genova, mi dedico a esaltare la tua bellezza naturale con trattamenti personalizzati e tecnologie all'avanguardia.</p>
+                <br>
+                <p>La mia passione è creare armonia e benessere per ogni cliente.</p>
+                <br>
+                <a href="#services" style="color: var(--gold); font-weight: bold; text-decoration: none;">Scopri i miei trattamenti &rarr;</a>
+            </div>
+        </div>
     </section>
 
     <section id="services" class="pricing">
         <div class="container">
             <div class="section-title">
                 <h2>I Nostri Servizi</h2>
+                <p class="seo-text">Offriamo servizi di Extension Ciglia, Trucco Permanente (Sopracciglia, Labbra, Eyeliner) e trattamenti viso come Microneedling e Pulizia Viso a Genova Sampierdarena.</p>
                 <p>Prezzi aggiornati in tempo reale</p>
             </div>
 
@@ -120,11 +190,11 @@
                 
                 <div class="price-item">
                     <span class="service-name">Pulizia del Viso ultrasuoni</span>
-                    <span id="vis_pulizia" class="price-value loading">Caricamento...</span>
+                    <span id="vis_pulizia" class="price-value loading">€ 50,00</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Trattamento Viso Personalizzato</span>
-                    <span id="vis_pers" class="price-value loading">Caricamento...</span>
+                    <span id="vis_pers" class="price-value loading">da € 50 a € 70</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Massaggio Viso Kobido</span>
@@ -184,6 +254,7 @@
             <div style="font-size: 2rem;">
                  <a href="https://instagram.com/veronica_antonelli.pmu_lashes" target="_blank" style="color: #E1306C; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
                  <a href="https://wa.me/393478364050" target="_blank" style="color: #25D366; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+                 <a href="https://www.facebook.com/share/1ELQ15u5Ya/" target="_blank" style="color: #1877F2; margin: 0 15px;"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </section>
@@ -204,43 +275,39 @@
 
     <footer>
         <div class="container">
+            <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Logo Footer" class="footer-logo">
+            
             <h3>L'Atelier dello Sguardo</h3>
             <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
             <p>Via G.B.Monti, 56r, Genova</p>
             
             <div class="dreamloop">
-                <p>Designed with <i class="fas fa-heart" style="color:red"></i> by <strong>dreamloop</strong></p>
+                <p>Designed with <i class="fas fa-heart" style="color:red"></i> by <a href="https://parisagh.github.io/dreanloop/" target="_blank"><strong>dreamloop</strong></a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // لینک اختصاصی شما که ارسال کردید
+        // لینک اختصاصی شما
         const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRfhEl0vWs8L_p98A2A2_315q4mMvHnhojg8SWW8cehfL4pUUcHNjrSU5mdg4GROSEXaa7ZpDfB7ESk/pub?gid=0&single=true&output=csv';
 
-        // تابع خواندن اطلاعات
         fetch(sheetUrl)
             .then(response => response.text())
             .then(csvText => {
-                const rows = csvText.split('\n'); // جدا کردن خطوط
+                const rows = csvText.split('\n'); 
                 
                 rows.forEach(row => {
-                    // تقسیم هر خط به ستون‌ها بر اساس کاما
-                    const cols = row.split(','); 
+                    const cols = row.split(',');
                     
                     if(cols.length >= 2) {
-                        const id = cols[0].trim(); // شناسه (مثل vis_pulizia)
+                        const id = cols[0].trim(); 
+                        const price = cols.slice(1).join(',').replace(/['"]+/g, '').trim();
                         
-                        // فرمول برای اینکه اگر قیمت کاما داشت (مثل € 50,00) خراب نشود
-                        // کتیشن‌ها (") را حذف می‌کند و بقیه بخش‌ها را به هم می‌چسباند
-                        const price = cols.slice(1).join(',').replace(/['"]+/g, '').trim(); 
-                        
-                        // پیدا کردن جایگاه قیمت در HTML و جایگذاری قیمت جدید
                         const element = document.getElementById(id);
                         if (element) {
-                            element.textContent = price; // تغییر متن
-                            element.classList.remove('loading'); // حذف انیمیشن لودینگ
-                            element.style.color = '#1a1a1a'; // تغییر رنگ به مشکی
+                            element.textContent = price; 
+                            element.classList.remove('loading'); 
+                            element.style.color = '#1a1a1a'; 
                         }
                     }
                 });
