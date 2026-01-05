@@ -82,13 +82,22 @@
 
         /* هیرو (بنر اصلی) */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover; background-position: center; height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover; background-position: center; height: 80vh; /* ارتفاع کمی بیشتر شد */
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: var(--white); padding: 20px;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; }
+        
+        /* استایل لوگوی بزرگ در هیرو */
+        .hero-logo {
+            max-width: 350px; /* سایز لوگو */
+            width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); /* سایه برای خوانایی بهتر روی پس‌زمینه */
+        }
+
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; letter-spacing: 1px; }
 
         /* بیوگرافی (بخش جدید) */
         .bio-section { padding: 80px 0; background: var(--white); }
@@ -131,7 +140,7 @@
         footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
         footer h3 { color: var(--white); margin-bottom: 15px; }
         footer a { color: var(--gold); text-decoration: none; }
-        .footer-logo { width: 150px; margin-bottom: 20px; opacity: 0.8; }
+        .footer-logo { width: 150px; margin-bottom: 20px; opacity: 0.9; }
         .dreamloop { margin-top: 40px; font-size: 0.8rem; opacity: 0.6; letter-spacing: 1px; }
 
         /* ریسپانسیو */
@@ -139,7 +148,10 @@
             .navbar { flex-direction: column; }
             .nav-links { margin-top: 15px; margin-bottom: 15px; }
             .nav-links a { margin: 0 10px; }
-            .hero h1 { font-size: 2.5rem; }
+            
+            /* تنظیم سایز لوگو در موبایل */
+            .hero-logo { max-width: 250px; }
+            
             .price-item { flex-direction: column; align-items: flex-start; }
             .price-value { align-self: flex-end; margin-top: 5px; color: var(--gold); }
             .bio-content { flex-direction: column; text-align: center; }
@@ -165,8 +177,10 @@
     </header>
 
     <section class="hero">
-        <h1>Centro Estetico Genova</h1>
-        <p>L'Atelier dello Sguardo | Beauty & Tattoo | Veronica Antonelli</p>
+        <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="L'Atelier dello Sguardo" class="hero-logo">
+        
+        <p>L'Atelier dello Sguardo | Beauty & Tattoo</p>
+        
         <a href="#services" class="btn-call" style="background: transparent; border: 2px solid #d4af37;">Scopri i Prezzi</a>
     </section>
 
@@ -176,7 +190,7 @@
                 <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Veronica Antonelli">
             </div>
             <div class="bio-text">
-                <h2>Veronica Antonelli</h2>
+                <h2>Veronica</h2>
                 <p>Ciao! Sono Veronica, specialista in bellezza dello sguardo e dermopigmentazione. Nel mio Atelier a Genova, mi dedico a esaltare la tua bellezza naturale con trattamenti personalizzati e tecnologie all'avanguardia.</p>
                 <br>
                 <p>La mia passione è creare armonia e benessere per ogni cliente.</p>
@@ -353,7 +367,7 @@
 
     <footer>
         <div class="container">
-            <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Logo Footer" class="footer-logo">
+            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo Footer" class="footer-logo">
             
             <h3>L'Atelier dello Sguardo</h3>
             <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
