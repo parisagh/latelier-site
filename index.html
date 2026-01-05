@@ -6,7 +6,7 @@
     
     <title>L'Atelier dello Sguardo | Centro Estetico Genova & Trucco Permanente</title>
     <meta name="description" content="Centro di estetica avanzata a Genova (Sampierdarena). Specializzati in Extension Ciglia, Trucco Permanente (PMU), Microneedling e Tattoo. Prenota con Veronica Antonelli.">
-    <meta name="keywords" content="Centro Estetico Genova, Extension Ciglia, Trucco Permanente, PMU, Tattoo, Sampierdarena, Veronica Antonelli">
+    <meta name="keywords" content="Centro Estetico Genova, Extension Ciglia, Trucco Permanente, PMU, Tattoo, Sampierdarena, Veronica Antonelli, Laminazione Ciglia Genova">
     
     <link rel="icon" href="https://parisagh.github.io/latelier-site/icon.ico" type="image/x-icon">
 
@@ -83,18 +83,18 @@
         /* هیرو (بنر اصلی) */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover; background-position: center; height: 80vh; /* ارتفاع کمی بیشتر شد */
+            background-size: cover; background-position: center; height: 80vh;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: var(--white); padding: 20px;
         }
         
         /* استایل لوگوی بزرگ در هیرو */
         .hero-logo {
-            max-width: 350px; /* سایز لوگو */
+            max-width: 350px;
             width: 80%;
             height: auto;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); /* سایه برای خوانایی بهتر روی پس‌زمینه */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
         }
 
         .hero p { font-size: 1.3rem; margin-bottom: 30px; font-weight: 300; letter-spacing: 1px; }
@@ -102,8 +102,17 @@
         /* بیوگرافی (بخش جدید) */
         .bio-section { padding: 80px 0; background: var(--white); }
         .bio-content { display: flex; align-items: center; gap: 40px; }
-        .bio-image { flex: 1; }
-        .bio-image img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .bio-image { flex: 1; text-align: center; }
+        /* تنظیم لوگوی وسط (بخش Chi Sono) */
+        .bio-image img { 
+            width: 80%; 
+            max-width: 300px; /* محدود کردن سایز لوگو در این بخش */
+            border-radius: 15px; 
+            /* حذف سایه سنگین چون لوگو است، اگر عکس بود سایه خوب بود */
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+        
         .bio-text { flex: 1; }
         .bio-text h2 { margin-bottom: 20px; color: var(--gold); }
 
@@ -125,7 +134,7 @@
         .loading { color: #ccc; font-size: 0.9rem; font-weight: normal; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 
-        /* توضیحات سئو برای سرویس‌ها (مخفی برای کاربر، قابل دیدن برای گوگل) */
+        /* توضیحات سئو برای سرویس‌ها */
         .seo-text { display: none; }
 
         /* نظرات */
@@ -149,7 +158,6 @@
             .nav-links { margin-top: 15px; margin-bottom: 15px; }
             .nav-links a { margin: 0 10px; }
             
-            /* تنظیم سایز لوگو در موبایل */
             .hero-logo { max-width: 250px; }
             
             .price-item { flex-direction: column; align-items: flex-start; }
@@ -164,7 +172,7 @@
     <header>
         <div class="container navbar">
             <a href="#">
-                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="L'Atelier dello Sguardo Logo" class="logo-img">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="L'Atelier dello Sguardo - Centro Estetico Genova" class="logo-img">
             </a>
             <div class="nav-links">
                 <a href="#about-me">Chi Sono</a>
@@ -177,7 +185,7 @@
     </header>
 
     <section class="hero">
-        <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="L'Atelier dello Sguardo" class="hero-logo">
+        <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Trucco Permanente e Extension Ciglia Genova - L'Atelier dello Sguardo" class="hero-logo">
         
         <p>L'Atelier dello Sguardo | Beauty & Tattoo</p>
         
@@ -187,7 +195,7 @@
     <section id="about-me" class="bio-section">
         <div class="container bio-content">
             <div class="bio-image">
-                <img src="https://s34.picofile.com/file/8488965900/Untitled_2.png" alt="Veronica Antonelli">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Laminazione Ciglia e Sopracciglia Genova - Veronica Antonelli">
             </div>
             <div class="bio-text">
                 <h2>Veronica</h2>
@@ -204,7 +212,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>I Nostri Servizi</h2>
-                <p class="seo-text">Offriamo servizi di Extension Ciglia, Trucco Permanente, Tattoo Fineline, Laminazione e trattamenti viso avanzati a Genova Sampierdarena.</p>
+                <p class="seo-text">Miglior centro per Extension Ciglia Genova, Laminazione, Trucco Permanente Labbra e Sopracciglia (PMU) a Sampierdarena.</p>
                 <p>Prezzi aggiornati in tempo reale</p>
             </div>
 
@@ -367,7 +375,7 @@
 
     <footer>
         <div class="container">
-            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo Footer" class="footer-logo">
+            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Centro Estetico Sampierdarena Genova - Logo" class="footer-logo">
             
             <h3>L'Atelier dello Sguardo</h3>
             <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
