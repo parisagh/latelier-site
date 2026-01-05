@@ -31,20 +31,65 @@
         .nav-links a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
         .btn-call { background: var(--gold); color: var(--white) !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
         
-        /* طراحی اختصاصی صفحه سالن */
         .salon-hero {
             background: var(--gray);
-            padding: 80px 0;
+            padding: 60px 0 40px;
             text-align: center;
         }
-        .salon-hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--gold); }
+        .salon-hero h1 { font-size: 3rem; margin-bottom: 15px; color: var(--gold); }
         .salon-hero p { max-width: 600px; margin: 0 auto; color: #555; }
 
-        /* بخش گالری عکس‌ها */
-        .salon-gallery { padding: 60px 0; }
-        
-        /* بخش نقشه */
-        .map-section { padding: 60px 0; background: #fff; }
+        /* --- استایل اسلایدشو --- */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            background: #000; /* رنگ زمینه مشکی برای وقتی عکس لود نشده */
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 600px; /* ارتفاع بیشتر برای نمایش بهتر جزئیات */
+            object-fit: cover; 
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+        }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* --- نقشه --- */
+        .map-section { padding: 60px 0; background: #fff; margin-top: 40px; }
         .map-container {
             width: 100%;
             height: 450px;
@@ -53,10 +98,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border: 5px solid #fff;
         }
-        
         iframe { width: 100%; height: 100%; border: 0; }
 
-        /* فوتر */
         footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
         footer h3 { color: var(--white); margin-bottom: 15px; }
         footer a { color: var(--gold); text-decoration: none; }
@@ -66,6 +109,7 @@
             .navbar { flex-direction: column; }
             .nav-links { margin-top: 15px; margin-bottom: 15px; }
             .nav-links a { margin: 0 10px; }
+            .mySlides img { height: 350px; }
         }
     </style>
 </head>
@@ -78,7 +122,8 @@
             </a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="#" class="active">Il Salone</a> <a href="index.html#services">Servizi</a>
+                <a href="#" class="active">Il Salone</a>
+                <a href="index.html#services">Servizi</a>
                 <a href="index.html#portfolio">Lavori</a>
             </div>
             <a href="tel:+393478364050" class="btn-call"><i class="fas fa-phone-alt"></i> Prenota</a>
@@ -88,20 +133,41 @@
     <section class="salon-hero">
         <div class="container">
             <h1>Il Nostro Centro</h1>
-            <p>Un ambiente elegante, accogliente e professionale dove prendersi cura della propria bellezza.</p>
+            <p>Un ambiente elegante, accogliente e professionale.</p>
         </div>
     </section>
 
-    <section class="salon-gallery">
-        <div class="container">
-            <h2 style="text-align:center; margin-bottom:40px;">Esplora l'Atelier</h2>
+    <div class="container" style="padding-bottom: 40px;">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A1.jpg" alt="Salone 1">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A2.jpg" alt="Salone 2">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A2.jpg" alt="Salone 3">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A4.jpg" alt="Salone 4">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A5.jpg" alt="Salone 5">
+            </div>
             
-            <iframe 
-                src="https://drive.google.com/embeddedfolderview?id=1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp#grid" 
-                style="width:100%; height:600px; border:0; border-radius:15px; background:#fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            </iframe>
+            <div class="mySlides fade">
+                <img src="https://parisagh.github.io/latelier-site/A6.jpg" alt="Salone 6">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
-    </section>
+    </div>
 
     <section class="map-section">
         <div class="container">
@@ -118,7 +184,7 @@
 
             <div class="map-container">
                 <iframe 
-                    src="https://maps.google.com/maps?q=Via%20G.B.Monti%2C%2056r%2C%20Genova&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.087723908851!2d8.89299497666249!3d44.41620027107626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d34199f57f5c71%3A0x6b6a6b6a6b6a6b6a!2sVia%20Giovanni%20Battista%20Monti%2C%2056%2C%2016151%20Genova%20GE%2C%20Italy!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
                     allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
@@ -137,6 +203,30 @@
         </div>
     </footer>
 
-</body>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+
+        // تغییر خودکار هر 3.5 ثانیه
+        setInterval(function() {
+            plusSlides(1);
+        }, 3500);
+    </script>
+
+</body>
 </html>
