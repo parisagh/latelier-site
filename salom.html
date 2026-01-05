@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Nostro Salone | L'Atelier dello Sguardo</title>
+    
+    <link rel="icon" href="https://parisagh.github.io/latelier-site/icon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; color: var(--black); line-height: 1.6; background-color: var(--white); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--black); }
+
+        /* هدر */
+        header { background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+        .logo-img { height: 60px; width: auto; display: block; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+        .btn-call { background: var(--gold); color: var(--white) !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); }
+        
+        /* طراحی اختصاصی صفحه سالن */
+        .salon-hero {
+            background: var(--gray);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .salon-hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--gold); }
+        .salon-hero p { max-width: 600px; margin: 0 auto; color: #555; }
+
+        /* بخش گالری عکس‌ها */
+        .salon-gallery { padding: 60px 0; }
+        
+        /* بخش نقشه */
+        .map-section { padding: 60px 0; background: #fff; }
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 5px solid #fff;
+        }
+        
+        iframe { width: 100%; height: 100%; border: 0; }
+
+        /* فوتر */
+        footer { background: var(--black); color: #ccc; padding: 50px 0; text-align: center; font-size: 0.9rem; }
+        footer h3 { color: var(--white); margin-bottom: 15px; }
+        footer a { color: var(--gold); text-decoration: none; }
+        .footer-logo { width: 150px; margin-bottom: 20px; opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; }
+            .nav-links { margin-top: 15px; margin-bottom: 15px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#" class="active">Il Salone</a> <a href="index.html#services">Servizi</a>
+                <a href="index.html#portfolio">Lavori</a>
+            </div>
+            <a href="tel:+393478364050" class="btn-call"><i class="fas fa-phone-alt"></i> Prenota</a>
+        </div>
+    </header>
+
+    <section class="salon-hero">
+        <div class="container">
+            <h1>Il Nostro Centro</h1>
+            <p>Un ambiente elegante, accogliente e professionale dove prendersi cura della propria bellezza.</p>
+        </div>
+    </section>
+
+    <section class="salon-gallery">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Esplora l'Atelier</h2>
+            
+            <iframe 
+                src="https://drive.google.com/embeddedfolderview?id=1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp#grid" 
+                style="width:100%; height:600px; border:0; border-radius:15px; background:#fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:40px;">
+                <h2>Vienici a trovare</h2>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--gold)"></i> Via G.B.Monti, 56r | Genova (Sampierdarena)</p>
+                
+                <div style="font-size: 2rem; margin-top: 20px;">
+                     <a href="https://instagram.com/veronica_antonelli.pmu_lashes" target="_blank" style="color: #E1306C; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
+                     <a href="https://wa.me/393478364050" target="_blank" style="color: #25D366; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+                     <a href="https://www.facebook.com/share/1ELQ15u5Ya/" target="_blank" style="color: #1877F2; margin: 0 15px;"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Via%20G.B.Monti%2C%2056r%2C%20Genova&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo Footer" class="footer-logo">
+            <h3>L'Atelier dello Sguardo</h3>
+            <p>Tel. 010 75 73 044 | Cell. 347 83 64 050</p>
+            <p>Via G.B.Monti, 56r, Genova</p>
+            <div class="dreamloop">
+                <p>Designed with <i class="fas fa-heart" style="color:red"></i> by <a href="https://parisagh.github.io/dreanloop/" target="_blank"><strong>dreamloop</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
