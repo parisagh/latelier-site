@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - L'Atelier dello Sguardo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+            --google-blue: #4285F4;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--gray);
+            margin: 0;
+            padding: 0;
+            color: var(--black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .admin-header {
+            margin-bottom: 30px;
+        }
+
+        .admin-header img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .admin-header h2 {
+            margin: 0;
+            color: var(--black);
+        }
+
+        .admin-header p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .control-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--white);
+            border: 2px solid #eee;
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+        }
+
+        .control-btn:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .control-btn i.icon-main {
+            font-size: 1.5rem;
+            color: var(--gold);
+            width: 30px;
+            text-align: center;
+        }
+
+        .control-btn span {
+            flex: 1;
+            text-align: left;
+            margin-left: 15px;
+            font-size: 1rem;
+        }
+
+        .btn-google:hover {
+            border-color: var(--google-blue);
+            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.25);
+        }
+        .btn-google i.icon-main {
+            color: var(--google-blue);
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 25px 0;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo">
+            <h2>Ciao, Veronica!</h2>
+            <p>Pannello di Controllo</p>
+        </div>
+
+        <a href="https://docs.google.com/spreadsheets/d/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp/edit" target="_blank" class="control-btn">
+            <i class="fas fa-euro-sign icon-main"></i>
+            <span>Modifica Prezzi</span>
+            <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
+        </a>
+
+        <a href="https://drive.google.com/drive/u/0/folders/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp" target="_blank" class="control-btn">
+            <i class="fas fa-images icon-main"></i>
+            <span>Gestisci Foto (Portfolio)</span>
+            <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
+        </a>
+
+        <a href="https://search.google.com/search-console/insights" target="_blank" class="control-btn btn-google">
+            <i class="fab fa-google icon-main"></i>
+            <span>Statistiche Google (SEO)</span>
+            <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: #ccc;"></i>
+        </a>
+
+        <div class="divider"></div>
+
+        <a href="https://parisagh.github.io/latelier-site/" target="_blank" class="control-btn" style="background: var(--black); color: var(--white); border: none;">
+            <i class="fas fa-eye icon-main" style="color: var(--white);"></i>
+            <span>Vedi il Sito Web</span>
+        </a>
+
+        <div class="footer-note">
+            Per assistenza: <strong>dreamloop support</strong>
+        </div>
+    </div>
+
+</body>
+</html>
