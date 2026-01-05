@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - L'Atelier dello Sguardo</title>
+    <title>Admin Login - L'Atelier dello Sguardo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -28,33 +28,79 @@
             min-height: 100vh;
         }
 
-        .admin-container {
+        .container-box {
             background: var(--white);
-            width: 100%;
+            width: 90%;
             max-width: 400px;
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
+            transition: all 0.3s ease;
         }
 
-        .admin-header {
-            margin-bottom: 30px;
-        }
-
-        .admin-header img {
+        .header img {
             width: 80px;
             margin-bottom: 15px;
         }
 
-        .admin-header h2 {
-            margin: 0;
+        .header h2 {
+            margin: 0 0 5px;
             color: var(--black);
         }
 
-        .admin-header p {
+        .header p {
             color: #777;
             font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* استایل‌های صفحه ورود */
+        #login-screen input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            box-sizing: border-box; /* مهم برای فیکس شدن عرض */
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        #login-screen input:focus {
+            border-color: var(--gold);
+        }
+
+        #login-screen button {
+            width: 100%;
+            padding: 15px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #login-screen button:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .error-msg {
+            color: #ff4757;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* استایل‌های پنل مدیریت (که ابتدا مخفی هستند) */
+        #dashboard-screen {
+            display: none; /* پیش‌فرض مخفی */
         }
 
         .control-btn {
@@ -90,68 +136,127 @@
             flex: 1;
             text-align: left;
             margin-left: 15px;
-            font-size: 1rem;
         }
 
-        .btn-google:hover {
-            border-color: var(--google-blue);
-            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.25);
-        }
-        .btn-google i.icon-main {
-            color: var(--google-blue);
-        }
+        .btn-google:hover { border-color: var(--google-blue); }
+        .btn-google i.icon-main { color: var(--google-blue); }
 
-        .divider {
-            height: 1px;
-            background: #eee;
-            margin: 25px 0;
-        }
-
-        .footer-note {
-            font-size: 0.8rem;
-            color: #aaa;
+        .divider { height: 1px; background: #eee; margin: 25px 0; }
+        
+        .logout-link {
+            display: inline-block;
             margin-top: 20px;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-bottom: 1px dashed #ccc;
         }
     </style>
 </head>
 <body>
 
-    <div class="admin-container">
-        <div class="admin-header">
-            <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo">
-            <h2>Ciao, Veronica!</h2>
-            <p>Pannello di Controllo</p>
+    <div class="container-box">
+        
+        <div id="login-screen">
+            <div class="header">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo">
+                <h2>Area Riservata</h2>
+                <p>Inserisci la password per accedere</p>
+            </div>
+            
+            <input type="password" id="passwordInput" placeholder="Password">
+            <button onclick="checkPassword()">Accedi</button>
+            <p class="error-msg" id="errorText">Password errata!</p>
         </div>
 
-        <a href="https://docs.google.com/spreadsheets/d/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp/edit" target="_blank" class="control-btn">
-            <i class="fas fa-euro-sign icon-main"></i>
-            <span>Modifica Prezzi</span>
-            <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
-        </a>
 
-        <a href="https://drive.google.com/drive/u/0/folders/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp" target="_blank" class="control-btn">
-            <i class="fas fa-images icon-main"></i>
-            <span>Gestisci Foto (Portfolio)</span>
-            <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
-        </a>
+        <div id="dashboard-screen">
+            <div class="header">
+                <img src="https://s34.picofile.com/file/8488966500/1767509890010.png" alt="Logo">
+                <h2>Ciao, Veronica!</h2>
+                <p>Pannello di Controllo</p>
+            </div>
 
-        <a href="https://search.google.com/search-console/insights" target="_blank" class="control-btn btn-google">
-            <i class="fab fa-google icon-main"></i>
-            <span>Statistiche Google (SEO)</span>
-            <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: #ccc;"></i>
-        </a>
+            <a href="https://docs.google.com/spreadsheets/d/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp/edit" target="_blank" class="control-btn">
+                <i class="fas fa-euro-sign icon-main"></i>
+                <span>Modifica Prezzi</span>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
+            </a>
 
-        <div class="divider"></div>
+            <a href="https://drive.google.com/drive/u/0/folders/1ZOnIC_3JxL2Lg5CreUYZyxVjjYrvQ4lp" target="_blank" class="control-btn">
+                <i class="fas fa-images icon-main"></i>
+                <span>Gestisci Foto</span>
+                <i class="fas fa-chevron-right" style="font-size: 0.8rem; color: #ccc;"></i>
+            </a>
 
-        <a href="https://parisagh.github.io/latelier-site/" target="_blank" class="control-btn" style="background: var(--black); color: var(--white); border: none;">
-            <i class="fas fa-eye icon-main" style="color: var(--white);"></i>
-            <span>Vedi il Sito Web</span>
-        </a>
+            <a href="https://search.google.com/search-console/insights" target="_blank" class="control-btn btn-google">
+                <i class="fab fa-google icon-main"></i>
+                <span>Statistiche (SEO)</span>
+                <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: #ccc;"></i>
+            </a>
 
-        <div class="footer-note">
-            Per assistenza: <strong>dreamloop support</strong>
+            <div class="divider"></div>
+
+            <a href="https://parisagh.github.io/latelier-site/" target="_blank" class="control-btn" style="background: var(--black); color: var(--white); border: none;">
+                <i class="fas fa-eye icon-main" style="color: var(--white);"></i>
+                <span>Vedi il Sito Web</span>
+            </a>
+
+            <a href="#" onclick="logout()" class="logout-link">Esci (Logout)</a>
         </div>
+
     </div>
+
+    <script>
+        // ----------------------------------------------------
+        // رمز عبور را اینجا تنظیم کنید
+        const CORRECT_PASSWORD = "atelier2024"; 
+        // ----------------------------------------------------
+
+        const loginScreen = document.getElementById('login-screen');
+        const dashboardScreen = document.getElementById('dashboard-screen');
+        const errorText = document.getElementById('errorText');
+        const passInput = document.getElementById('passwordInput');
+
+        // چک کردن اینکه آیا قبلاً لاگین کرده یا نه
+        if (sessionStorage.getItem('isLoggedIn') === 'true') {
+            showDashboard();
+        }
+
+        function checkPassword() {
+            const enteredPass = passInput.value;
+            
+            if (enteredPass === CORRECT_PASSWORD) {
+                // رمز درست است
+                sessionStorage.setItem('isLoggedIn', 'true'); // ذخیره وضعیت ورود
+                showDashboard();
+            } else {
+                // رمز اشتباه است
+                errorText.style.display = 'block';
+                passInput.style.borderColor = '#ff4757';
+                // لرزش اینپوت
+                passInput.classList.add('shake');
+                setTimeout(() => passInput.classList.remove('shake'), 500);
+            }
+        }
+
+        function showDashboard() {
+            loginScreen.style.display = 'none';
+            dashboardScreen.style.display = 'block';
+        }
+
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            location.reload(); // رفرش صفحه برای بازگشت به حالت اول
+        }
+
+        // زدن دکمه Enter هم کار کند
+        passInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+    </script>
 
 </body>
 </html>
